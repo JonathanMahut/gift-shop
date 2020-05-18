@@ -4,6 +4,7 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
+    "skipLibCheck": true, /// Pour corriger Problème connection firebase Angular
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
