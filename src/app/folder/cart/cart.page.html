@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Mon Panier</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreem>
+  <ion-list>
+    <ion-item *ngFor="let article of cartItems ; let i = index"> <!--On récupère l'index de l'élément dans i pour pouvoir le réutiliser dans une fonction (remove)-->
+      <ion-thumbnail>
+        <img src="{{article.item.pictures[0]}}" />
+      </ion-thumbnail>
+      <ion-label>
+        {{article.item.title}}
+      </ion-label>
+      <p>
+        <ion-badge color="secondary"> {{article.qty}}</ion-badge> x {{article.item.price | currency}} 
+      </p>&nbsp;
+      <p *ngIf="article.item.availability.feed">
+        Livraison : {{article.item.availability.feed | currency}} &nbsp;
+      </p>
+      <p>Total : {{(article.item.price * article.qty) + article.item.availability.feed | currency}}  </p>
+      <ion-button><ion-icon name="mail"></ion-icon>&nbsp;
+        Contacter</ion-button>
+      <ion-button slot="end" color="danger"
+        (click)="removeItem(article, i)"><ion-icon name="trash"></ion-icon
+      ></ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" (click)="fermerModal()">Fermer</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="block" fill="outline">Panier : {{total | currency}}</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Shopping</ion-title>
+    <ion-button slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-button>
+    <ion-buttons >
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-button slot= "end" type="submit" (click)="authService.SignOut()" slot = "end"><ion-icon name="log-out"></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle>Shopping App</ion-card-subtitle>
+    <ion-card-title>About</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    Keep close to Nature's heart... and break clear away, once in awhile,
+    and climb a mountain or spend a week in the woods. Wash your spirit clean.
+  </ion-card-content>
+</ion-card>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col offset-1 col-10>
+        <!-- colonne de largeur dix et qui saute 1 colonne-->
+        <ion-button shape="round" expand="block">
+          <ion-icon name="camera"></ion-icon>&nbsp; Vendez votre produit
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
+
+

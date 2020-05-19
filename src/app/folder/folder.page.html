@@ -4,6 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>{{ folder }}</ion-title>
+    <ion-button slot = "end" type="submit" (click)="authService.SignOut()" slot = "end"><ion-icon name="log-out"></ion-icon></ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -14,8 +15,50 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-list>
+    <ion-item button  *ngFor="let article of Articles"  [routerLink]="['details',article]"  routerDirection="forward" >
+      <ion-thumbnail item-start>
+        <img [src]="article.pictures[0]" #picture (click)="showImage(article.pictures[0], $event)" /> <!--On envoie event pour éviter la propagation du click et arriver sur la page détails -->
+      </ion-thumbnail>
+      <ion-label>
+        <h3>{{article.title}}</h3>
+        <p>{{article.description}}</p>
+        <p>{{article.price | currency }}</p>
+        <p>
+          <span *ngIf="article.averageStar >=1">
+            <ion-icon class="iconStar" name="star"></ion-icon>
+          </span>
+          <span *ngIf="article.averageStar >=2">
+            <ion-icon class="iconStar" name="star"></ion-icon>
+          </span>
+          <span *ngIf="article.averageStar >=3">
+            <ion-icon class="iconStar" name="star"></ion-icon>
+          </span>
+          <span *ngIf="article.averageStar >=4">
+            <ion-icon class="iconStar" name="star"></ion-icon>
+          </span>
+          <span *ngIf="article.averageStar >=5">
+            <ion-icon class="iconStar" name="star"></ion-icon>
+          </span>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col offset-1 col-10>
+        <!-- colonne de largeur dix et qui saute 1 colonne-->
+        <ion-button
+          shape="round"
+          expand="block"
+          [routerLink]="'create-product'"
+          routerDirection="forward"
+        >
+          <ion-icon name="camera"></ion-icon>&nbsp; Vendez votre produit
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
