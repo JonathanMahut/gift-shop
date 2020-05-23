@@ -1,0 +1,10 @@
+TODO: ajouter le photoPicker pour séléctionner les photos de l'article à vendre dans Ajout D'article 
+TODO: Obtenir les datas directement de la base firestore
+TODO: Ajouter des filtres de séléctions d'articles (Par catégories, par ville, par types, par dispo, ...)
+TODO: Créer une page Categorie avec des Carts contenant les catégories de Produit (Photo d'exemple, description, link...).
+TODO: Si loggé en tant que Jon.mahut alors ajouter une entrée au menu Admin pour gérer le Backend Firebase
+TODO: Rechercher un service en ligne gratuit distribuant une liste de Pays, Ville...
+TODO: Ajouter des Catégories de revendeurs (Magasin/Revendeur, Chaine, Producteur)
+TODO: Ajouter un service de géolocalisation pour trouver un revendeur proche
+TODO: Ajouter un Fond Design au menu ???
+

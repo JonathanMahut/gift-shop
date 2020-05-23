@@ -14,6 +14,9 @@ export class CreateProductPage implements OnInit {
   categories = [];
   cities = [];
 
+
+  //TODO: ajouter le photoPicker pour séléctionner les photos de l'article à vendre
+
   constructor(public authService: AuthenticationService) { 
 
     this.myProduct = {} as Product;

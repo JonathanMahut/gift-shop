@@ -129,16 +129,28 @@ export class ProductsServiveService {
     ];
   }
 
-  public GetArticleS(id: string) {
+  // TODO: Obtenir les datas directement de la base firestore
+
+  // Récupère un article dans la base grace à son id
+  public GetArticle(id: string) {
     this.article = this.db.object("products-list/");
     return this.article;
   }
 
+  // Retourne la liste d'article de la base de données Firestore
   public GetListArticles() {
     return this.productsRef;
+  }
+
+  // Retourne la liste d'article de démos en dur (pour éviter les ccès à la BD Firestore)
+  public GetDemoArticles()
+  {
+    return this.Articles;
   }
 
   public AddArticle(article: Product) {
     return this.productsRef.push(article);
   }
+
+  //TODO: Ajouter des filtres de séléctions d'articles (Par catégories, par ville, par types, par dispo, ...)
 }
