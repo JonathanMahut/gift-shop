@@ -17,7 +17,7 @@ const routes: Routes = [
     loadChildren: () => import('./gift-categories/gift-categories.module').then( m => m.GiftCategoriesPageModule)
   },
   {
-    path: 'details:article',
+    path: 'details',
     loadChildren: () => import('./details/details.module').then( m => m.DetailsPageModule)
   }
 ];

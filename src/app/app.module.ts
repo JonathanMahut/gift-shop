@@ -16,13 +16,12 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
-import { IonicStorageModule } from '@ionic/storage';
 
 import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
 
 import { HttpClientModule } from '@angular/common/http';
-import { NgxDatatableModule } from "@swimlane/ngx-datatable";
-
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 @NgModule({
@@ -32,18 +31,22 @@ import { NgxDatatableModule } from "@swimlane/ngx-datatable";
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFirestoreModule,
     NgxDatatableModule, // Composant pour les datas dans une table
     HttpClientModule, /// Pour choper les datas de l'extérieur
-    NgxIonicImageViewerModule
+    NgxIonicImageViewerModule,
+    IonicStorageModule.forRoot({
+      name: '__mydb',
+      driverOrder: ['indexeddb', 'websql', 'localstorage'],
+    })
   ],
   providers: [
     StatusBar,
     MethodService,
+    AngularFirestoreModule,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

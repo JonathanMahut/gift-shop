@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color ="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -16,7 +16,8 @@
   </ion-header>
 
   <ion-list>
-    <ion-item button  *ngFor="let article of Articles"  [routerLink]="['details',article]"  routerDirection="forward" >
+    <ion-item button  *ngFor="let article of Articles"  (click)="showDetails(article)"  >
+      <!-- <ion-item button  *ngFor="let article of Articles"  [routerLink] ="['details',article]"  routerDirection="forward"> -->
       <ion-thumbnail item-start>
         <img [src]="article.pictures[0]" #picture (click)="showImage(article.pictures[0], $event)" /> <!--On envoie event pour éviter la propagation du click et arriver sur la page détails -->
       </ion-thumbnail>

@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
       icon: 'paper-plane'
     },
     {
-      title: 'A propos',
+      title: 'About',
       url: '/about',
       icon: 'information'
     },  
@@ -43,8 +43,8 @@ export class AppComponent implements OnInit {
       icon: 'information'
     }, 
     {
-      title: 'Détails',
-      url: '/details:article.id',
+      title: 'Details',
+      url: '/details',
       icon: 'information'
     },
     {

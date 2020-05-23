@@ -39,6 +39,15 @@ const routes: Routes = [
     path : 'cart',
     loadChildren:() => import('./folder/cart/cart.module').then(m => m.CartPageModule)
   }
+  ,
+  {
+    path : 'about',
+    loadChildren:() => import('./folder/about/about.module').then(m => m.AboutPageModule)
+  },
+  {
+    path : 'details',
+    loadChildren:() => import('./folder/details/details.module').then(m => m.DetailsPageModule)
+  }
 
 ];
 
