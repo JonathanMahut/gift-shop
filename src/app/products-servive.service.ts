@@ -126,6 +126,28 @@ export class ProductsServiveService {
         city: "Troyes",
         averageStar: 2,
       },
+      {
+        title: "Bague Trinity de chez Cartier",
+        description:
+          "Bagues trois ors entrelacés",
+        pictures: [
+          "assets/imgs/Cartier/Trinity.png",
+          "assets/imgs/Cartier/Trinity_Handwriting.png",
+          "assets/imgs/Cartier/Trinity_StandardFonts.png",
+          "assets/imgs/Cartier/Trinity.png",
+        ],
+        id: "6",
+        price: 1500,
+        category: "Bijouterie",
+        state: "Neuf",
+        createdAt: new Date(),
+        availability: {
+          available: true,
+          type: "Magasin",
+        },
+        city: "Lyon",
+        averageStar: 5,
+      },
     ];
   }
 
@@ -150,6 +172,16 @@ export class ProductsServiveService {
 
   public AddArticle(article: Product) {
     return this.productsRef.push(article);
+  }
+
+  public FillDBWithArticles(articles : Product[])
+  {
+    articles.forEach(p => {
+      this.productsRef.push(p);
+      console.log("Produit :", p, " ajouté à la dbFirestore");
+      
+      
+    });
   }
 
   //TODO: Ajouter des filtres de séléctions d'articles (Par catégories, par ville, par types, par dispo, ...)

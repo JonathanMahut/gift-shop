@@ -1,0 +1,291 @@
+{
+    "article-list": [
+        {
+            "title": "ACQUA DI GIOIA",
+            "description": "Parfum d'Armani : LoElit irure incididunt deserunt proident.rem",
+            "pictures": [
+                "assets/imgs/Armani/ACQUA_DI_GIOIA_50ML_BOUCHE.png",
+                "assets/imgs/Armani/ACQUA_DI_GIOIA_50ML_COEURPLEIN.png",
+                "assets/imgs/Armani/ACQUA_DI_GIOIA_50ML_NAME.png",
+                "assets/imgs/Armani/ACQUA_DI_GIOIA_50ML_NAME.png"
+            ],
+            "id": "1",
+            "price": 75,
+            "category": "Cosmétique",
+            "state": "Neuf",
+            "createdAt": "2015-10-26T07:46:36.611Z",
+            "availability": {
+                "available": true,
+                "type": "Livraison",
+                "feed": 10
+            },
+            "city": "Lyon",
+            "averageStar": 5
+        },
+        {
+            "title": "1001 NUITS",
+            "description": "Parfum d'Armani : LoElit irure incididunt deserunt proident.rem",
+            "pictures": [
+                "assets/imgs/Armani/1001_NUITS_100ML_NAME.png",
+                "assets/imgs/Armani/1001_NUITS_100ML_NOM.png",
+                "assets/imgs/Armani/1001_NUITS_250ML_NAME.png",
+                "assets/imgs/Armani/1001_NUITS_250ML_NOM.png"
+            ],
+            "id": "2",
+            "price": 50,
+            "category": "Cosmétique",
+            "state": "Neuf",
+            "createdAt": "2015-10-26T07:46:36.611Z",
+            "availability": {
+                "available": true,
+                "type": "Livraison",
+                "feed": 5
+            },
+            "city": "Lyon",
+            "averageStar": 4
+        },
+        {
+            "title": "Blade Bow",
+            "description": "Whisky Haut de Gamme : LoElit irure incididunt deserunt proident.rem",
+            "pictures": [
+                "assets/imgs/Diageo/BladeBow_750ml (2).png",
+                "assets/imgs/Diageo/BladeBow_750ml.png",
+                "assets/imgs/Diageo/BladeBow22.png",
+                "assets/imgs/Diageo/BladeBow22v2.png"
+            ],
+            "id": "3",
+            "price": 90,
+            "category": "Spiritueux",
+            "state": "Neuf",
+            "createdAt": "2015-10-26T07:46:36.611Z",
+            "availability": {
+                "available": true,
+                "type": "Magasin"
+            },
+            "city": "Lyon",
+            "averageStar": 4
+        },
+        {
+            "title": "Note 4",
+            "description": "Smartphone Samsung Haut de gamme : LoElit irure incididunt deserunt proident.rem",
+            "pictures": [
+                "assets/imgs/Samsung/NOTE 4_S VIEW WALLET_EF-EN910F.png",
+                "assets/imgs/Samsung/Note4_Edge.png",
+                "assets/imgs/Samsung/Note4.png",
+                "assets/imgs/Samsung/Note5.png"
+            ],
+            "id": "4",
+            "price": 90,
+            "category": "Téléphone",
+            "state": "Occasion",
+            "createdAt": "2015-10-26T07:46:36.611Z",
+            "availability": {
+                "available": true,
+                "type": "Magasin"
+            },
+            "city": "Paris",
+            "averageStar": 3
+        },
+        {
+            "title": "Note 4",
+            "description": "Coque pour Smartphone Samasung: LoElit irure incididunt deserunt proident.rem",
+            "pictures": [
+                "assets/imgs/Samsung/CG920B_Front.png",
+                "assets/imgs/Samsung/CG920B_BackBlueBlack.png",
+                "assets/imgs/Samsung/CG920B_BackSilverYellowOrangeGold.png",
+                "assets/imgs/Samsung/CG920B_Back.png"
+            ],
+            "id": "5",
+            "price": 90,
+            "category": "Accessoire",
+            "state": "Neuf",
+            "createdAt": "2015-10-26T07:46:36.611Z",
+            "availability": {
+                "available": true,
+                "type": "Magasin"
+            },
+            "city": "Troyes",
+            "averageStar": 2
+        },
+        {
+            "title": "Note 4",
+            "description": "Coque pour Smartphone Samasung: LoElit irure incididunt deserunt proident.rem",
+            "pictures": [
+                "assets/imgs/Samsung/CG920B_Front.png",
+                "assets/imgs/Samsung/CG920B_BackBlueBlack.png",
+                "assets/imgs/Samsung/CG920B_BackSilverYellowOrangeGold.png",
+                "assets/imgs/Samsung/CG920B_Back.png"
+            ],
+            "id": "6",
+            "price": 90,
+            "category": "Accessoire",
+            "state": "Neuf",
+            "createdAt": "2015-10-26T07:46:36.611Z",
+            "availability": {
+                "available": true,
+                "type": "Magasin"
+            },
+            "city": "Troyes",
+            "averageStar": 2
+        },
+        {
+            "title": "Note 4",
+            "description": "Coque pour Smartphone Samasung: LoElit irure incididunt deserunt proident.rem",
+            "pictures": [
+                "assets/imgs/Samsung/CG920B_Front.png",
+                "assets/imgs/Samsung/CG920B_BackBlueBlack.png",
+                "assets/imgs/Samsung/CG920B_BackSilverYellowOrangeGold.png",
+                "assets/imgs/Samsung/CG920B_Back.png"
+            ],
+            "id": "7",
+            "price": 90,
+            "category": "Accessoire",
+            "state": "Neuf",
+            "createdAt": "2015-10-26T07:46:36.611Z",
+            "availability": {
+                "available": true,
+                "type": "Magasin"
+            },
+            "city": "Troyes",
+            "averageStar": 2
+        },
+        {
+            "title": "Note 4",
+            "description": "Coque pour Smartphone Samasung: LoElit irure incididunt deserunt proident.rem",
+            "pictures": [
+                "assets/imgs/Samsung/CG920B_Front.png",
+                "assets/imgs/Samsung/CG920B_BackBlueBlack.png",
+                "assets/imgs/Samsung/CG920B_BackSilverYellowOrangeGold.png",
+                "assets/imgs/Samsung/CG920B_Back.png"
+            ],
+            "id": "8",
+            "price": 90,
+            "category": "Accessoire",
+            "state": "Neuf",
+            "createdAt": "2015-10-26T07:46:36.611Z",
+            "availability": {
+                "available": true,
+                "type": "Magasin"
+            },
+            "city": "Troyes",
+            "averageStar": 2
+        },
+        {
+            "title": "Note 4",
+            "description": "Coque pour Smartphone Samasung: LoElit irure incididunt deserunt proident.rem",
+            "pictures": [
+                "assets/imgs/Samsung/CG920B_Front.png",
+                "assets/imgs/Samsung/CG920B_BackBlueBlack.png",
+                "assets/imgs/Samsung/CG920B_BackSilverYellowOrangeGold.png",
+                "assets/imgs/Samsung/CG920B_Back.png"
+            ],
+            "id": "9",
+            "price": 90,
+            "category": "Accessoire",
+            "state": "Neuf",
+            "createdAt": "2015-10-26T07:46:36.611Z",
+            "availability": {
+                "available": true,
+                "type": "Magasin"
+            },
+            "city": "Troyes",
+            "averageStar": 2
+        }
+    ],
+    "categories-list": [
+        {
+            "title" : "Spiritueux",
+            "pictures":[{"label":"","path":""}],
+            "description":""
+        },{
+            "title" : "Accessoires",
+            "pictures":[{"label":"","path":""}],
+            "description":""
+        },
+        {
+            "title" : "Cosmétique",
+            "pictures":[{"label":"","path":""}],
+            "description":""
+        },
+        {
+            "title" : "Téléphonie",
+            "pictures":[{"label":"","path":""}],
+            "description":""
+        },
+        {
+            "title" : "High-Tech",
+            "pictures":[{"label":"","path":""}],
+            "description":""
+        },
+        {
+            "title" : "Décoration",
+            "pictures":[{"label":"","path":""}],
+            "description":""
+        },
+        {
+            "title" : "Bijouterie",
+            "pictures":[{"label":"","path":""}],
+            "description":""
+        },
+        {
+            "title" : "Parfum",
+            "pictures":[{"label":"","path":""}],
+            "description":""
+        },
+        {
+            "title" : "Stylos et Bureaux",
+            "pictures":[{"label":"","path":""}],
+            "description":""
+        },
+        {
+            "title" : "Outils",
+            "pictures":[{"label":"","path":""}],
+            "description":""
+        },
+        {
+            "title" : "Musiques",
+            "pictures":[{"label":"","path":""}],
+            "description":""
+        },
+        {
+            "title" : "Fleurs",
+            "pictures":[{"label":"","path":""}],
+            "description":""
+        },
+        {
+            "title" : "Jouets",
+            "pictures":[{"label":"","path":""}],
+            "description":""
+        },
+        {
+            "name":"Magasin",
+            "description":""
+        },
+        {
+            "name":"Grande Distribution",
+            "description":""
+        }
+    ],
+    "reselers-categories-list":[
+        {
+            "name":"Boutique",
+            "description":""
+        },
+        {
+            "name":"Revendeur",
+            "description":""
+        },
+        {
+            "name":"Distributeurs",
+            "description":""
+        },
+        {
+            "name":"Internet",
+            "description":""
+        },
+        {
+            "name":"Producteurs",
+            "description":""
+        }
+    ]
+}

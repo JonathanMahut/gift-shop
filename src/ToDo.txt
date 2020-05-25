@@ -7,4 +7,6 @@ TODO: Rechercher un service en ligne gratuit distribuant une liste de Pays, Vill
 TODO: Ajouter des Catégories de revendeurs (Magasin/Revendeur, Chaine, Producteur)
 TODO: Ajouter un service de géolocalisation pour trouver un revendeur proche
 TODO: Ajouter un Fond Design au menu ???
+TODO: Pouvoir récupérer les datas d'un fichier JSON
+TODO: Gestion du i18N pour la location des textes et valeurs
 
