@@ -22,6 +22,7 @@ import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { IonicStorageModule } from '@ionic/storage';
+import { ImagePicker } from '@ionic-native/image-picker/ngx';
 
 
 @NgModule({
@@ -45,8 +46,10 @@ import { IonicStorageModule } from '@ionic/storage';
   ],
   providers: [
     StatusBar,
+    ImagePicker,
     MethodService,
     AngularFirestoreModule,
+    ImagePicker,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
