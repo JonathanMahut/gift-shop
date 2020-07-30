@@ -49,7 +49,6 @@ import { ImagePicker } from '@ionic-native/image-picker/ngx';
     ImagePicker,
     MethodService,
     AngularFirestoreModule,
-    ImagePicker,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

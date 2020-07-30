@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FolderPageRoutingModule } from './folder-routing.module';
+import { FolderPageRoutingModule } from './products-routing.module';
 
-import { FolderPage } from './folder.page';
+import { FolderPage } from './products.page';
 import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
 
 @NgModule({
