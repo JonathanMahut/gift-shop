@@ -6,9 +6,17 @@
     <ion-title>{{article.title}}</ion-title>
     <ion-buttons>
       <ion-button><ion-icon name="share"></ion-icon></ion-button>
-      <ion-button (click)="openCart()"><ion-icon name="cart" ></ion-icon></ion-button> 
+      <ion-button (click)="openCart()"
+        ><ion-icon name="cart"></ion-icon
+      ></ion-button>
     </ion-buttons>
-    <ion-button slot = "end" type="submit" (click)="authService.SignOut()" slot = "end"><ion-icon name="log-out"></ion-icon></ion-button>
+    <ion-button
+      slot="end"
+      type="submit"
+      (click)="authService.SignOut()"
+      slot="end"
+      ><ion-icon name="log-out"></ion-icon
+    ></ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -16,38 +24,27 @@
   <ion-card>
     <ion-slides [options]="slideOptsOne">
       <ion-slide *ngFor="let picture of article.pictures">
-        <img class="myImg" [src]="picture"  />
+        <img class="myImg" [src]="picture" />
       </ion-slide>
     </ion-slides>
     <ion-chip color="primary">
-      <ion-label>
-        {{article.category}}
-      </ion-label>
+      <ion-label> {{article.category.title}} </ion-label>
     </ion-chip>
+    <ion-chip><ion-label> {{article.brand.name}} </ion-label></ion-chip>
     <ion-chip *ngIf="article.availability.available" color="secondary">
-      <ion-label>
-        Disponible
-      </ion-label>
+      <ion-label> Disponible </ion-label>
     </ion-chip>
     <ion-chip *ngIf="!article.availability.available" color="danger">
-      <ion-label>
-        Indisponible
-      </ion-label>
+      <ion-label> Indisponible </ion-label>
     </ion-chip>
     <ion-chip>
-      <ion-label>
-        {{article.availability.type}}
-      </ion-label>
+      <ion-label> {{article.availability.type}} </ion-label>
     </ion-chip>
     <ion-chip color="primary">
-      <ion-label>
-        {{article.state}}
-      </ion-label>
+      <ion-label> {{article.state}} </ion-label>
     </ion-chip>
     <ion-chip color="primary">
-      <ion-label>
-        {{article.city}}
-      </ion-label>
+      <ion-label> {{article.city}} </ion-label>
     </ion-chip>
     <ion-card-content>
       <ion-card-title></ion-card-title>
@@ -71,21 +68,30 @@
       </p>
       <p>{{article.description}}</p>
       <ion-grid>
-        <ion-row >
+        <ion-row>
           <ion-col col-9>
-            <ionic5-star-rating #rating
-            activeIcon = "star"
-            defaultIcon = "star-outline"
-            activeColor = "#F4E242" 
-            defaultColor = "#FFFFFF"
-            readonly="false"
-            rating="3"
-            fontSize = "23px"
-            (ratingChanged)="logRatingChange($event)">
-        </ionic5-star-rating>
+            <ionic5-star-rating
+              #rating
+              activeIcon="star"
+              defaultIcon="star-outline"
+              activeColor="#F4E242"
+              defaultColor="#FFFFFF"
+              readonly="false"
+              rating="3"
+              fontSize="23px"
+              (ratingChanged)="logRatingChange($event)"
+            >
+            </ionic5-star-rating>
           </ion-col>
           <ion-col col-2>
-            <ion-button shape="round" color="secondary" (click)="onValidateRate()" padding size="small">Noter</ion-button>
+            <ion-button
+              shape="round"
+              color="secondary"
+              (click)="onValidateRate()"
+              padding
+              size="small"
+              >Noter</ion-button
+            >
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -98,8 +104,9 @@
     <ion-row>
       <ion-col offset-1 col-10>
         <!-- colonne de largeur dix et qui saute 1 colonne-->
-        <ion-button shape="round" expand="block" (click) = "addToCart(article)">
-          <ion-icon name="cart" ></ion-icon>&nbsp; Ajouter au panier</ion-button>
+        <ion-button shape="round" expand="block" (click)="addToCart(article)">
+          <ion-icon name="cart"></ion-icon>&nbsp; Ajouter au panier</ion-button
+        >
       </ion-col>
     </ion-row>
   </ion-toolbar>

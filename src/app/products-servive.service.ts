@@ -1,6 +1,7 @@
 import { Product } from "./../models/interface-product";
 import { Injectable } from "@angular/core";
-import { AngularFireDatabase, AngularFireObject } from "@angular/fire/database"; // Firebase modules for Database, Data list and Single object
+// Firebase modules for Database, Data list and Single object
+import { AngularFireDatabase, AngularFireObject } from "@angular/fire/database";
 
 @Injectable({
   providedIn: "root",
@@ -26,7 +27,8 @@ export class ProductsServiveService {
         ],
         id: "1",
         price: 75,
-        category: "Cosmétique",
+        category: { title: "Cosmétique" },
+        brand: { name: "Armani" },
         state: "Neuf",
         createdAt: new Date(),
         availability: {
@@ -49,7 +51,8 @@ export class ProductsServiveService {
         ],
         id: "2",
         price: 50,
-        category: "Cosmétique",
+        category: { title: "Cosmétique" },
+        brand: { name: "Armani" },
         state: "Neuf",
         createdAt: new Date(),
         availability: {
@@ -72,7 +75,8 @@ export class ProductsServiveService {
         ],
         id: "3",
         price: 90,
-        category: "Spiritueux",
+        category: { title: "Spiritueux" },
+        brand: { name: "Armani" },
         state: "Neuf",
         createdAt: new Date(),
         availability: {
@@ -94,7 +98,8 @@ export class ProductsServiveService {
         ],
         id: "4",
         price: 90,
-        category: "Téléphone",
+        category: { title: "Téléphone" },
+        brand: { name: "Samsung" },
         state: "Occasion",
         createdAt: new Date(),
         availability: {
@@ -116,7 +121,8 @@ export class ProductsServiveService {
         ],
         id: "5",
         price: 90,
-        category: "Accessoire",
+        category: { title: "Accessoire" },
+        brand: { name: "Samsung" },
         state: "Neuf",
         createdAt: new Date(),
         availability: {
@@ -128,8 +134,7 @@ export class ProductsServiveService {
       },
       {
         title: "Bague Trinity de chez Cartier",
-        description:
-          "Bagues trois ors entrelacés",
+        description: "Bagues trois ors entrelacés",
         pictures: [
           "assets/imgs/Cartier/Trinity.png",
           "assets/imgs/Cartier/Trinity_Handwriting.png",
@@ -138,7 +143,8 @@ export class ProductsServiveService {
         ],
         id: "6",
         price: 1500,
-        category: "Bijouterie",
+        category: { title: "Bijouterie" },
+        brand: { name: "Cartier" },
         state: "Neuf",
         createdAt: new Date(),
         availability: {
@@ -165,8 +171,7 @@ export class ProductsServiveService {
   }
 
   // Retourne la liste d'article de démos en dur (pour éviter les ccès à la BD Firestore)
-  public GetDemoArticles()
-  {
+  public GetDemoArticles() {
     return this.Articles;
   }
 
@@ -174,15 +179,12 @@ export class ProductsServiveService {
     return this.productsRef.push(article);
   }
 
-  public FillDBWithArticles(articles : Product[])
-  {
-    articles.forEach(p => {
+  public FillDBWithArticles(articles: Product[]) {
+    articles.forEach((p) => {
       this.productsRef.push(p);
       console.log("Produit :", p, " ajouté à la dbFirestore");
-      
-      
     });
   }
 
-  //TODO: Ajouter des filtres de séléctions d'articles (Par catégories, par ville, par types, par dispo, ...)
+  // TODO: Ajouter des filtres de séléctions d'articles (Par catégories, par ville, par types, par dispo, ...)
 }
