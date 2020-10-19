@@ -1,28 +1,25 @@
+import { CartPage } from "./../cart/cart.page";
 
-import { CartPage } from './../cart/cart.page';
-
-
-import { Component, OnInit } from '@angular/core';
-import { NavController, ToastController, ModalController } from '@ionic/angular';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from 'src/models/interface-product';
-import { Storage } from '@ionic/storage';
-import { AuthenticationService } from 'src/app/shared/authentication-service';
-import { MethodService } from 'src/app/method.service';
-import { itemCart } from 'src/models/interface-itemCart';
-
-
-
-
+import { Component, OnInit } from "@angular/core";
+import {
+  NavController,
+  ToastController,
+  ModalController,
+} from "@ionic/angular";
+import { ActivatedRoute, Router } from "@angular/router";
+import { Product } from "src/models/interface-product";
+import { Storage } from "@ionic/storage";
+import { AuthenticationService } from "src/app/shared/authentication-service";
+import { MethodService } from "src/app/method.service";
+import { itemCart } from "src/models/interface-itemCart";
 
 @Component({
-  selector: 'app-details',
-  templateUrl: './details.page.html',
-  styleUrls: ['./details.page.scss'],
+  selector: "app-details",
+  templateUrl: "./details.page.html",
+  styleUrls: ["./details.page.scss"],
 })
 // tslint:disable-next-line: component-class-suffix
 export class DetailsPage implements OnInit {
-
   public article: Product;
   public folder: string;
 
@@ -30,30 +27,29 @@ export class DetailsPage implements OnInit {
     initialSlide: 0,
     slidesPerView: 1,
     autoplay: true,
-    pager: true
+    pager: true,
   };
   public rate: number;
 
-
-  constructor(private route: ActivatedRoute,
-    public navCtrl: NavController,
+  constructor(
+    private route: ActivatedRoute,
+    //public navCtrl: NavController,
     private router: Router,
     private storage: Storage,
     public toastController: ToastController,
     public modal: ModalController,
-    public method : MethodService,
-    public authService: AuthenticationService) {
-    
-  }
+    public method: MethodService,
+    public authService: AuthenticationService
+  ) {}
 
   logRatingChange(rating): void {
-    console.log('changed rating: ', rating);
+    console.log("changed rating: ", rating);
     this.rate = rating;
   }
 
   onValidateRate(): void {
     this.article.averageStar = (this.rate + this.article.averageStar) / 2;
-    console.log('New AverageStarVale : ', this.article.averageStar);
+    console.log("New AverageStarVale : ", this.article.averageStar);
   }
 
   addToCart(article: Product): void {
@@ -68,17 +64,16 @@ export class DetailsPage implements OnInit {
     let added = false;
 
     // Si le panier est vide, on ajoute l'article au panier
-    this.storage.get('Cart').then((items: itemCart[]) => {
+    this.storage.get("Cart").then((items: itemCart[]) => {
       if (items === null || items.length === 0) {
         items = [];
         items.push({
           item: article,
           qty: 1,
-          amount: article.price
+          amount: article.price,
         });
         added = true;
-      }
-      else {
+      } else {
         for (let index = 0; index < items.length; index++) {
           const element: itemCart = items[index];
           if (this.article.id === element.item.id) {
@@ -93,38 +88,40 @@ export class DetailsPage implements OnInit {
           items.push({
             item: article,
             qty: 1,
-            amount: article.price
+            amount: article.price,
           });
         }
       }
-      this.storage.set('Cart', items)
-        .then(async items => {
-
+      this.storage
+        .set("Cart", items)
+        .then(async (items) => {
           const toast = await this.toastController.create({
             message: "Article ajouté à votre panier",
             animated: true,
-            color: 'primary',
-            cssClass: 'toast-success',
+            color: "primary",
+            cssClass: "toast-success",
             duration: 2000,
-            header: '',
+            header: "",
             keyboardClose: true,
-            mode: 'ios',
-            position: 'bottom',
-            translucent: true
+            mode: "ios",
+            position: "bottom",
+            translucent: true,
           });
           toast.present();
         })
-        .catch(err => console.log("Erreur durant l'ajout au panier : ", err));
+        .catch((err) => console.log("Erreur durant l'ajout au panier : ", err));
     });
   }
 
   getArticleInCart(key: string) {
-    this.storage.get(key).then(value => {
-      console.log('L\'article est : ' + value);
-      return value;
-    })
-      .catch(err => {
-        console.log('Ereeur : ' + err);
+    this.storage
+      .get(key)
+      .then((value) => {
+        console.log("L'article est : " + value);
+        return value;
+      })
+      .catch((err) => {
+        console.log("Ereeur : " + err);
         return null;
       });
   }
@@ -133,21 +130,23 @@ export class DetailsPage implements OnInit {
   //   console.log("Affichage du Panier dans une page Modal");
   //   this.modal.create({component : CartPage});
   //   this.modal.getTop();
-    
+
   // }
 
   async openCart() {
     const modal = await this.modal.create({
-      component: CartPage
+      component: CartPage,
     });
     return await modal.present();
   }
-  
 
   ngOnInit() {
     this.folder = this.route.snapshot.paramMap.get("id");
-    this.route.queryParams.subscribe(params => {
-      console.log("Détails NgInit : ",this.router.getCurrentNavigation().extras.state.article);
+    this.route.queryParams.subscribe((params) => {
+      console.log(
+        "Détails NgInit : ",
+        this.router.getCurrentNavigation().extras.state.article
+      );
       if (this.router.getCurrentNavigation().extras.state) {
         console.log(this.router.getCurrentNavigation().extras.state.article);
 
@@ -156,5 +155,3 @@ export class DetailsPage implements OnInit {
     });
   }
 }
-
-

@@ -1,4 +1,4 @@
-import { Product } from "./../models/interface-product";
+import { Brand, Category, Product } from "./../models/interface-product";
 import { Injectable } from "@angular/core";
 // Firebase modules for Database, Data list and Single object
 import { AngularFireDatabase, AngularFireObject } from "@angular/fire/database";
@@ -10,8 +10,16 @@ export class ProductsServiveService {
   // productsRef: AngularFireObject<Product> [];   // Reference to Student object, its an Observable too
 
   public productsRef = this.db.list<Product>("articles-list");
+  public brandsRef = this.db.list<Brand>("brands-list");
+  public categoriesRef = this.db.list<Category>("categories-list");
+
   public article: AngularFireObject<Product>;
+  public marque: AngularFireObject<Brand>;
+  public categorie: AngularFireObject<Category>;
+
   public Articles: Product[];
+  public Brands: Brand[];
+  public Categories: Category[];
 
   constructor(private db: AngularFireDatabase) {
     this.Articles = [
@@ -27,7 +35,7 @@ export class ProductsServiveService {
         ],
         id: "1",
         price: 75,
-        category: { title: "Cosmétique" },
+        category: { title: "Cosmetiques" },
         brand: { name: "Armani" },
         state: "Neuf",
         createdAt: new Date(),
@@ -51,7 +59,7 @@ export class ProductsServiveService {
         ],
         id: "2",
         price: 50,
-        category: { title: "Cosmétique" },
+        category: { title: "Cosmetiques" },
         brand: { name: "Armani" },
         state: "Neuf",
         createdAt: new Date(),
@@ -75,7 +83,7 @@ export class ProductsServiveService {
         ],
         id: "3",
         price: 90,
-        category: { title: "Spiritueux" },
+        category: { title: "Alcools" },
         brand: { name: "Armani" },
         state: "Neuf",
         createdAt: new Date(),
@@ -98,7 +106,7 @@ export class ProductsServiveService {
         ],
         id: "4",
         price: 90,
-        category: { title: "Téléphone" },
+        category: { title: "Téléphonie" },
         brand: { name: "Samsung" },
         state: "Occasion",
         createdAt: new Date(),
@@ -121,7 +129,7 @@ export class ProductsServiveService {
         ],
         id: "5",
         price: 90,
-        category: { title: "Accessoire" },
+        category: { title: "Accessoires" },
         brand: { name: "Samsung" },
         state: "Neuf",
         createdAt: new Date(),
@@ -143,7 +151,7 @@ export class ProductsServiveService {
         ],
         id: "6",
         price: 1500,
-        category: { title: "Bijouterie" },
+        category: { title: "Bijoux" },
         brand: { name: "Cartier" },
         state: "Neuf",
         createdAt: new Date(),
@@ -153,6 +161,126 @@ export class ProductsServiveService {
         },
         city: "Lyon",
         averageStar: 5,
+      },
+    ];
+
+    this.Brands = [
+      {
+        name: "Cartier",
+        site: "https://www.cartier.fr/",
+      },
+      {
+        name: "Armany",
+        site: "https://www.armani.com/fr/armanicom",
+      },
+      {
+        name: "Samsung",
+        site: "https://www.samsung.com/fr/",
+      },
+      {
+        name: "Diageo",
+        site: "https://www.diageo.com/",
+      },
+      {
+        name: "Fred",
+        site: "https://www.fred.com/fr_FR/",
+      },
+      {
+        name: "Tiffany",
+        site: "https://www.tiffany.fr/",
+      },
+      {
+        name: "Belvedere",
+        site: "https://www.belvederevodka.com/fr-fr/",
+      },
+      {
+        name: "Estée Lauder",
+        site: "https://www.esteelauder.fr/zq",
+      },
+      {
+        name: "Bulgari",
+        site: "https://www.bulgari.com/fr-fr/",
+      },
+      {
+        name: "Campari",
+        site: "http://www.campari.com/fr",
+      },
+      {
+        name: "Dior",
+        site: "https://www.dior.com/fr_fr",
+      },
+      {
+        name: "Yves Saint-Laurent",
+        site: "https://www.ysl.com/fr-fr",
+      },
+      {
+        name: "Disney",
+        site: "https://disney.fr/",
+      },
+      {
+        name: "Edrington",
+        site: "https://www.edrington.com/",
+      },
+      {
+        name: "Fossil",
+        site: "https://www.fossil.com/fr-fr/",
+      },
+      {
+        name: "Hennessy",
+        site: "https://www.hennessy.com/fr-fr",
+      },
+      {
+        name: "Jim Beam",
+        site: "https://global.jimbeam.com/fr-fr/",
+      },
+      {
+        name: "Peter Graham Dunn",
+        site: "https://www.pgrahamdunn.com/",
+      },
+      {
+        name: "Jo Malone",
+        site: "https://www.jomalone.com/",
+      },
+      {
+        name: "Glazers",
+        site: "http://www.southernglazers.com/",
+      },
+      {
+        name: "Thoma Sabo",
+        site: "https://www.thomassabo.com/EU/fr_FR/home?georedirected=true",
+      },
+    ];
+
+    this.Categories = [
+      {
+        title: "Cosmetiques",
+      },
+      {
+        title: "Bijoux",
+      },
+      {
+        title: "Téléphonie",
+      },
+      {
+        title: "Alcools",
+      },
+      {
+        title: "Parfums",
+      },
+      {
+        title: "Décoration",
+      },
+      {
+        title: "Jouets",
+      },
+      {
+        title: "Maison",
+      },
+      {
+        title: "Mode",
+      },
+      {
+        title: "Accessoires",
       },
     ];
   }
@@ -170,9 +298,27 @@ export class ProductsServiveService {
     return this.productsRef;
   }
 
+  // Retourne la liste des marques de la BD
+  public GetListBrands() {
+    return this.brandsRef;
+  }
+
+  // Retourne la liste de Catégories de la BD
+  public GetListCategories() {
+    return this.categoriesRef;
+  }
+
   // Retourne la liste d'article de démos en dur (pour éviter les ccès à la BD Firestore)
-  public GetDemoArticles() {
+  public GetDemoArticles(): Product[] {
     return this.Articles;
+  }
+
+  public GetDemoCategories(): Array<Category> {
+    return this.Categories;
+  }
+
+  public GetDemoBrands(): Brand[] {
+    return this.Brands;
   }
 
   public AddArticle(article: Product) {
