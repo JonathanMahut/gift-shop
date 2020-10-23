@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
-import { AuthenticationService } from '../shared/authentication-service';
-import { Product } from 'src/models/interface-product';
-import { ModalController } from '@ionic/angular';
-import { MethodService } from '../method.service';
-import { ProductsServiveService } from '../products-servive.service';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router, NavigationExtras } from "@angular/router";
+import { AuthenticationService } from "../shared/authentication-service";
+import { Product } from "src/models/interface-product";
+import { ModalController } from "@ionic/angular";
+import { MethodService } from "../method.service";
+import { ProductsServiveService } from "../products-servive.service";
 
 @Component({
-  selector: 'app-folder',
-  templateUrl: './products.page.html',
-  styleUrls: ['./products.page.scss'],
+  selector: "app-folder",
+  templateUrl: "./products.page.html",
+  styleUrls: ["./products.page.scss"],
 })
 export class FolderPage implements OnInit {
   public folder: string;
@@ -27,11 +27,10 @@ export class FolderPage implements OnInit {
   ) {
     // On va simuler le fait que les articles proviennent d'une base de données
     this.Articles = this.productService.GetDemoArticles();
-
   }
 
   ngOnInit() {
-  // /  this.folder = this.activatedRoute.snapshot.paramMap.get("id");
+    this.folder = this.activatedRoute.snapshot.paramMap.get("id");
   }
 
   showDetails(article: Product) {
@@ -42,12 +41,12 @@ export class FolderPage implements OnInit {
     this.article = article;
     const navigationExtras: NavigationExtras = {
       state: {
-        article: this.article
-      }
+        article: this.article,
+      },
     };
     // console.log(navigationExtras);
 
-    this.router.navigate(['/details'], navigationExtras);
+    this.router.navigate(["/details"], navigationExtras);
   }
 
   showImage(picture: any, event) {

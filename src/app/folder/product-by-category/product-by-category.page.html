@@ -1,9 +1,29 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>productByCategory</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="flex" *ngFor="let product of products">
+    <ion-card>
+      <ion-item lines="none" color="primary">
+        <ion-label>{{product.title}}</ion-label>
+        <ion-label>{{product.price | currency}}</ion-label>
+        <ion-icon name="cart" slot="end"></ion-icon>
+      </ion-item>
 
+      <ion-item lines="none" color="primary">
+        <ion-slides [options]="slideOptsOne">
+          <ion-slide *ngFor="let picture of product.pictures">
+            <img class="myImg" [src]="picture" />
+          </ion-slide>
+        </ion-slides>
+        <ion-card-content> {{product.description}}</ion-card-content>
+      </ion-item>
+    </ion-card>
+  </div>
 </ion-content>
